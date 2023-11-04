@@ -1,0 +1,37 @@
+{% extends "layouts/base.html" %}
+{% block title %}Home{% endblock title %}
+{% block container %}
+{% for post in posts %}
+<div>
+    <label for="">{{ post.user.username }}</label>
+    {% if post.imagen %}
+    <img src="{{ post.image.url }}" alt="" style="max-width: 100px;max-height: 100px;">
+    {% endif %}
+    <label for="">{{ post.descripcion }}</label>
+    <a href="{% url 'likeordislike' post.id %}"><button>me gustas</button></a>
+    {% if post.id in post_likes %}
+        <label>{{ post_likes|get_item:post.id }} Me gusta</label>
+    {% else %}
+        <label>0 Me gusta</label>
+    {% endif %}
+    {% for comentario in comentarios %}
+    {% if comentario.post_id == post.id %}
+    <div style="width: 50%; margin-left: auto; margin-right: auto;">
+        <hr>
+        <label for="">{{ comentario.user.username }}</label>
+        <label for="">{{ comentario.comentario }}</label>
+        <hr>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <form action="{% url 'comentario_new' post.id %}" method="post">
+        {% csrf_token %}
+        <textarea name="comentario" id="" cols="30" rows="10" placeholder="Comentemelo"></textarea>
+        <button>Comentar</button>
+    </form>
+    {% endif %}
+</div>
+<hr>
+{% endfor %}
+{% endblock container %}

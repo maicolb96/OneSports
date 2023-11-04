@@ -1,0 +1,9 @@
+{% extends "layouts/base.html" %}
+{% block title %}New Post{% endblock title %}
+{% block container %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Register</button>
+    </form>
+{% endblock container %}
