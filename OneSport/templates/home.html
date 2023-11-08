@@ -1,37 +1,87 @@
 {% extends "layouts/base.html" %}
+{% load static %}
 {% block title %}Home{% endblock title %}
 {% block container %}
-{% for post in posts %}
-<div>
-    <label for="">{{ post.user.username }}</label>
-    {% if post.imagen %}
-    <img src="{{ post.image.url }}" alt="" style="max-width: 100px;max-height: 100px;">
-    {% endif %}
-    <label for="">{{ post.descripcion }}</label>
-    <a href="{% url 'likeordislike' post.id %}"><button>me gustas</button></a>
-    {% if post.id in post_likes %}
-        <label>{{ post_likes|get_item:post.id }} Me gusta</label>
-    {% else %}
-        <label>0 Me gusta</label>
-    {% endif %}
-    {% for comentario in comentarios %}
-    {% if comentario.post_id == post.id %}
-    <div style="width: 50%; margin-left: auto; margin-right: auto;">
-        <hr>
-        <label for="">{{ comentario.user.username }}</label>
-        <label for="">{{ comentario.comentario }}</label>
-        <hr>
+<section>
+    <aside>
+        <div class="menu_nav">
+            <a href="{% url 'home' %}"> <h1>Inicio</h1></a>
+            <a href=""><h1>Eventos</h1></a>
+            <a href=""><h1>Configuracion</h1></a>
+            <a href=""><h1>Mi perfil</h1></a>
+        </div>
+        
+        <form method="post" action="{% url 'newpost' %}" enctype="multipart/form-data">
+            <div class="publish">    
+                {% csrf_token %}
+                <input name="descripcion" type="text" placeholder="¿En que estas pensando?">
+                <div class="publish__down">
+                    <i class='bx bxs-image' id="boton-disparador"></i>
+                    <input type="file" accept="image/*" name="image" style="display: none;" id="inputOculto">
+                    <button>
+                        Publicar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </aside>
+    
+    <div class="publicaciones">
+        {% for post in posts %}
+            <div class="publicacion">
+                <div class="publi__title">
+                    <h1>{{ post.user.username }}</h1>
+                    <button>Seguir</button>
+                </div>
+                <h1 class="description__publi">{{ post.descripcion }}</h1>
+                {% if post.image %}
+                <div class="img-contenedor">
+                    <img src="{{ post.image.url }}" alt="">
+                </div>
+                {% endif %}
+                <div class="likes_container">
+                    <div class="like_cont">
+                        <i class='bx bx-like' ></i>
+                        <h2>5</h2>
+                    </div>
+                    <div class="comment_cont">
+                        <i class='bx bxs-comment' ></i>
+                        <h2>3</h2>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-    {% endif %}
-    {% endfor %}
-    {% if user.is_authenticated %}
-    <form action="{% url 'comentario_new' post.id %}" method="post">
-        {% csrf_token %}
-        <textarea name="comentario" id="" cols="30" rows="10" placeholder="Comentemelo"></textarea>
-        <button>Comentar</button>
-    </form>
-    {% endif %}
-</div>
-<hr>
-{% endfor %}
+    <div class="eventos">
+        <h1>Eventos de interés</h1>
+
+        <div class="evento">
+            <h2>Evento de ejemplo</h2>
+            <div class="img_eventContainer">
+                <img src="https://picsum.photos/700/400?random" alt="">
+            </div>      
+        </div>
+
+        <div class="evento">
+            <h2>Evento de ejemplo</h2>
+            <div class="img_eventContainer">
+                <img src="https://picsum.photos/700/400?random" alt="">
+            </div>      
+        </div>
+
+        <div class="evento">
+            <h2>Evento de ejemplo</h2>
+            <div class="img_eventContainer">
+                <img src="https://picsum.photos/700/400?random" alt="">
+            </div>      
+        </div>
+
+        <div class="evento">
+            <h2>Evento de ejemplo</h2>
+            <div class="img_eventContainer">
+                <img src="https://picsum.photos/700/400?random" alt="">
+            </div>      
+        </div>
+    </div>
+</section>
 {% endblock container %}

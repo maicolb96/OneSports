@@ -19,12 +19,13 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('post/newpost', views.new_post,name = 'newpost'),
-    path('comentario/newcomentario/<int:id_post>/', views.newcomentario,name='comentario_new'),
+    path('comentario/newcomentario/<int:id_post>/', views.newcomentario,name='comment_new'),
     path('like/<int:id_post>/', views.likeordislike,name='likeordislike'),
     path('',views.home,name='home'),
 ] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
