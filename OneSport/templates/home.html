@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 {% load static %}
-{% block title %}Home{% endblock title %}
+{% block title %}One Sport{% endblock title %}
 {% block container %}
 <section>
     <aside>
@@ -27,7 +27,7 @@
     </aside>
     
     <div class="publicaciones">
-        {% for post in posts %}
+        {% for post in posts%}
             <div class="publicacion">
                 <div class="publi__title">
                     <h1>{{ post.user.username }}</h1>

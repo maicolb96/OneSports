@@ -21,6 +21,7 @@ def new_post(request):
 
 def home(request):
     posts = Post.objects.all()
+    posts = posts[::-1]
     post_likes = {}
 
     for post in posts:
