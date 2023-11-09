@@ -4,6 +4,8 @@
     --color-gray-contrast-two: #3d3e3f;
     --color-gray-contrast-three: #272829;
     --color-main-green: #96ae51;
+    --color-greenish-grey-contrast:   #44453b;
+    --color-greenish-grey-placeholder: #b9c1bc;
 }
 
 /*COLORES*/
@@ -124,3 +126,109 @@ body{
     color: rgba(255, 255, 255, 0.9);
 }
 
+/********************************************/
+/*        Estilos Login y Registro          */
+/********************************************/
+
+.formulario.cuenta {
+    max-width: 400px !important;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--color-greenish-grey-contrast);
+    border-radius: 35px;
+    padding-top: 5px;
+  }
+  
+  .formulario.cuenta > div.logo-completo{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .formulario.cuenta img {
+    width: 40px;
+  }
+  
+  .formulario.cuenta h1 {
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .formulario-interno.center{
+    text-align: center;
+  }
+  .formulario-interno.left{
+    text-align: left;
+  }
+  .formulario-interno{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .input-line {
+    border-bottom: 2px solid var(--color-greenish-grey-placeholder);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    color: var(--color-greenish-grey-placeholder);
+    font-family: DejaVu Sans;
+    font-size: larger;
+  }
+  
+  .input-line.first{
+    margin-bottom: 60px;
+  }
+  .contenedor-ui-checkbox {
+    text-align: center;
+  }
+  .ui.checkbox{
+    width: 80%;
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+  
+  .ui.checkbox label{
+    color: var(--color-greenish-grey-placeholder);
+    font-family: DejaVu Sans;
+    text-align: left!important;
+  }
+  .ui.checkbox label:hover{
+    color: var(--color-greenish-grey-placeholder)!important;
+  }
+  .top-margin{
+    margin-top: 15px!important;
+    &.max{margin-top: 60px!important;}
+  }
+  .bottom-margin{
+    margin-bottom: 15px!important;
+    &.max{margin-bottom: 60px!important;}
+  }
+  .max-margin-bottom {
+    margin-bottom: 60px!important;
+  }
+  .formulario-interno{
+    text-align: center;
+  }
+  .formulario-interno button{
+    margin-top: 60px;
+    margin-right: 40%;
+    margin-bottom: 30px;
+  }
+  
+  .formulario-interno span{
+    color: white;
+  }
+  .formulario-interno span a {
+    color:  #96a951;
+  }  
+ .close.icon{
+    margin-top: 20px;
+    margin-right: 20px!important;
+ }
+ .google.icon{
+    margin-left: 10px!important;
+ }

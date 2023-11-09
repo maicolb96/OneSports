@@ -2845,6 +2845,55 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
   box-shadow: 0px 0px 0px 2px #21b8ff inset !important;
   color: #54C8FF !important;
 }
+/*-------------------*/
+/*   Boton editado   */
+/*------ Green ------*/
+
+.ui.green-e.buttons .button,
+.ui.green-e.button {
+  background-color: #96a951;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+
+.ui.green-e.button {
+  box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+
+.ui.green-e.buttons .button:hover,
+.ui.green-e.button:hover {
+  background-color: #809044;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+.ui.green-e.buttons .button:focus,
+.ui.green-e.button:focus {
+  background-color: #809044;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+.ui.green-e.buttons .button:active,
+.ui.green-e.button:active {
+  background-color: #809044;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+.ui.green-e.buttons .active.button,
+.ui.green-e.buttons .active.button:active,
+.ui.green-e.active.button,
+.ui.green-e.button .active.button:active {
+  background-color: #809044;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+.ui.green-e.button.top-margin.bottom-margin > i{
+  margin-left: 10px!important;  
+}
 
 /*--- Green ---*/
 

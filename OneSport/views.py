@@ -52,3 +52,9 @@ def newcomentario(request,id_post):
             comentario.comentario = request.POST.get('comentario')
             comentario.save()
     return redirect('home')
+
+def registro(request):
+  return render(request,'layouts/partials/registro.html',{})
+
+def ingreso(request):
+    pass

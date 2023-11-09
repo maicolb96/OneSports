@@ -1,27 +1,14 @@
-<div class="ui modal">
-  <i class="close icon"></i>
-  <div class="header">
-    {% block Registrar %}
-      
-    {% endblock Registrar %}
+<div class="ui basic modal cuentas-modal" style="max-width: 500px;">
+  <div class="cuentas-contenido content" id="cuentas-contenido">
+    <p>Cargando formulario...</p>
   </div>
-  <div class="image content">
-    <div class="ui medium image">
-      <img src="/images/avatar/large/chris.jpg">
-    </div>
-    <div class="description">
-      <div class="ui header">We've auto-chosen a profile image for you.</div>
-      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-      <p>Is it okay to use this photo?</p>
-    </div>
-  </div>
-  <div class="actions">
-    <div class="ui black deny button">
-      Nope
-    </div>
-    <div class="ui positive right labeled icon button">
-      Yep, that's me
-      <i class="checkmark icon"></i>
+  <div class="footer modal">
+    <div class="field">
+      <ul>
+        {% for message in messages %}
+        <li>{{message|safe}}</li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </div>

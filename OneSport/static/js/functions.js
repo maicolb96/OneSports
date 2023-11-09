@@ -19,3 +19,17 @@ inputOculto.addEventListener('change', function () {
         div_img_to_push.style.display = 'block';
     }
 });
+
+$(document).ready(function() {
+    $('#registro-btn').click(function() {
+        $('#cuentas-contenido').load('registro/');
+        $('.cuentas-modal').modal('show');
+    });
+  });
+  $(document).ready(function() {
+    $('#login-btn').click(function() {
+        $('#cuentas-contenido').load('/cliente/login');
+        $('.cuentas-modal').modal('show');
+    });
+  });
+  
