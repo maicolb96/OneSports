@@ -3,6 +3,7 @@ from django.contrib import messages
 from SportBlog.models import *
 from SportBlog.forms import *
 from django.contrib.auth.decorators import login_required
+from allauth.socialaccount.providers.oauth2.views import OAuth2Adapter #Se agrego para saltar la confirmación de google
 # Create your views here.
 
 @login_required
