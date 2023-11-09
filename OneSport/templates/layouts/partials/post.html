@@ -18,27 +18,33 @@
     </form>
 
     {% for post in posts%}
-        <div class="publicacion">
-            <div class="publi__title">
-                <h1>{{ post.user.username }}</h1>
-                <button>Seguir</button>
-            </div>
-            <h1 class="description__publi">{{ post.descripcion }}</h1>
-            {% if post.image %}
-            <div class="img-contenedor">
+    <div class="ui card">
+        <div class="content">
+          <div class="right floated meta">14h</div>
+          <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"> {{ post.user.username }}
+        </div>
+        <div>
+            {{ post.descripcion }}
+        </div>
+        {% if post.image %}
+            <div class="image">
                 <img src="{{ post.image.url }}" alt="">
             </div>
-            {% endif %}
-            <div class="likes_container">
-                <div class="like_cont">
-                    <i class='bx bx-like' ></i>
-                    <h2>5</h2>
-                </div>
-                <div class="comment_cont">
-                    <i class='bx bxs-comment' ></i>
-                    <h2>3</h2>
-                </div>
-            </div>
+        {% endif %}
+        <div class="content">
+          <span class="right floated">
+            <i class="heart outline like icon"></i>
+            17 likes
+          </span>
+          <i class="comment icon"></i>
+          3 comments
         </div>
+        <div class="extra content">
+          <div class="ui large transparent left icon input">
+            <i class="heart outline icon"></i>
+            <input type="text" placeholder="Add Comment...">
+          </div>
+        </div>
+      </div>
     {% endfor %}
 </div>
