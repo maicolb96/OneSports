@@ -254,6 +254,8 @@ hr{
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    overflow-y: auto;
+    max-height: 1000px;
 }
 
 .eventos h1{
