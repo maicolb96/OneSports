@@ -1,6 +1,6 @@
 :root {
     --color-gray-backgorund: #191919;
-    --color-gray-contrast: #757575;
+    --color-gray-contrast: #9e9e9e;
 }
 
 body{
@@ -22,16 +22,18 @@ body{
 }
 
 .menu_nav{
-    padding-top: 40px;
-    display: inline-grid;
-    width: 100%;
-    padding-left: 60px;
+    margin-top: 10% !important;
+    margin-left: 15% !important;
 }
 
-.menu_nav a{
-    margin-top: 40px;
-    font-family: 'DejaVu Sans', sans-serif;
-    font-size: 1.1em;
-    text-decoration: none;
-    color: var(--color-gray-contrast);
+.ui.teal.labels .label, .ui.teal.label {
+    background-color: #96ae51 !important;
+    border-color: #96ae51 !important;
+    color: #FFFFFF !important;
 }
+
+.ui.inverted.menu .teal.active.item, .ui.inverted.teal.menu {
+    background-color: var(--color-gray-contrast);
+}
+
+
