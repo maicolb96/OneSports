@@ -5,55 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/semantic.css' %}">
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-    <header>
-        <a href="{% url 'home' %}">
-            <div class="logo">
-                <h1>OneSport</h1>
-                <img src="{% static '/images/logo.png' %}" alt="">
-            </div>
-        </a>
-        <div class="searchBar">
-            <input placeholder="Explora temas">
-            <i class='bx bx-search'></i>
-        </div>
-        <div class="signUp">
-            <a href="{% url 'account_login' %}">
-                <div class="signUp__title sign1">
-                    <h2>Iniciar sesión</h2>
-                </div>
-            </a>
-            <a href="{% url 'account_signup' %}">
-                <div class="signUp__title sign2">
-                    <h2>Registrarse</h2>
-                </div>
-            </a>
-        </div>
-    </header>
-    <hr class="border1">
+    {% include "layouts/partials/menu.html" %}
     {% block container %}
       
     {% endblock container %}
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-<script>
-    const boton = document.getElementById('boton-disparador');
-    const inputOculto = document.getElementById('inputOculto');
-    boton.addEventListener('click',function(){
-        inputOculto.click();
-    })
-</script>
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'js/semantic.js' %}"></script>
