@@ -106,11 +106,11 @@ WSGI_APPLICATION = 'OneSport.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'onesport',
-        'HOST':'localhost',
-        'USER':'root',
-        'PASSWORD':'1001390987',
-        'PORT':'3306',
+        'NAME': env('NAME'),
+        'HOST':env('HOST'),
+        'USER':env('USER'),
+        'PASSWORD':env('PASSWORD'),
+        'PORT':env('PORT'),
     }
 }
 
