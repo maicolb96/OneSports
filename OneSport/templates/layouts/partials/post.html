@@ -1,0 +1,44 @@
+<div class="post">
+    <form method="post" action="{% url 'newpost' %}" enctype="multipart/form-data">
+        <div class="publish">    
+            {% csrf_token %}
+            <div class="ui big inverted input post_input">
+                <input type="text" name="descripcion" placeholder="¿En que estas pensando?">
+                <i class='ui images icon' id="boton-disparador"></i>
+            </div>
+            <div id="div_img_to_push" class="show_img_to_push">
+                <img id="img_to_pus" src="" alt="Imagen a publicar">
+            </div>
+            <hr style="max-width: 97%;">
+            <div class="publish__down">
+                <input type="file" accept="image/*" name="image" style="display: none;" id="inputOculto">
+                <button class="fluid ui green_main_bg button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Publicar</font></font></button>
+            </div>
+        </div>
+    </form>
+
+    {% for post in posts%}
+        <div class="publicacion">
+            <div class="publi__title">
+                <h1>{{ post.user.username }}</h1>
+                <button>Seguir</button>
+            </div>
+            <h1 class="description__publi">{{ post.descripcion }}</h1>
+            {% if post.image %}
+            <div class="img-contenedor">
+                <img src="{{ post.image.url }}" alt="">
+            </div>
+            {% endif %}
+            <div class="likes_container">
+                <div class="like_cont">
+                    <i class='bx bx-like' ></i>
+                    <h2>5</h2>
+                </div>
+                <div class="comment_cont">
+                    <i class='bx bxs-comment' ></i>
+                    <h2>3</h2>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

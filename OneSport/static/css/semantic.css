@@ -24467,7 +24467,7 @@ Floated Menu / Item
 
 .ui.inverted.menu {
   border: 0px solid transparent;
-  background: #1B1C1D;
+  background: #272829;
   box-shadow: none;
 }
 
@@ -24542,7 +24542,7 @@ Floated Menu / Item
 /*--- Active ---*/
 
 .ui.inverted.menu .active.item {
-  background: rgba(255, 255, 255, 0.15);
+  background: #96ae51;
   color: #ffffff !important;
 }
 
