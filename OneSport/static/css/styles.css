@@ -1,6 +1,7 @@
 :root {
     --color-gray-backgorund: #191919;
     --color-gray-contrast: #757575;
+    --color-cream-green: #96AE51;
 }
 
 body{
@@ -35,3 +36,22 @@ body{
     text-decoration: none;
     color: var(--color-gray-contrast);
 }
+
+
+.ui.inverted.segment, .ui.primary.inverted.segment {
+    background: #191919;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.secondary.inverted.menu .active.item {
+    background: var(--color-cream-green);
+    color: #ffffff !important;
+    border-radius: 25px;
+}
+
+.ui.inverted.menu .item, .ui.inverted.menu .item > a:not(.ui) {
+    background: transparent;
+    border-radius: 25px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
