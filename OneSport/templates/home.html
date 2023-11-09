@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}One Sport{% endblock title %}
 {% block container %}
-<section>
+<section class="section_main">
     <aside>
         <div class="menu_nav">
             <a href="{% url 'home' %}"> <h1>Inicio</h1></a>
@@ -10,7 +10,9 @@
             <a href=""><h1>Configuracion</h1></a>
             <a href=""><h1>Mi perfil</h1></a>
         </div>
-        
+    </aside>
+    
+    <div class="publicaciones">
         <form method="post" action="{% url 'newpost' %}" enctype="multipart/form-data">
             <div class="publish">    
                 {% csrf_token %}
@@ -22,11 +24,9 @@
                         Publicar
                     </button>
                 </div>
-            </form>
-        </div>
-    </aside>
-    
-    <div class="publicaciones">
+            </div>
+        </form>
+
         {% for post in posts%}
             <div class="publicacion">
                 <div class="publi__title">
