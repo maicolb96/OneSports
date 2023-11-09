@@ -113,7 +113,7 @@ body{
 }
 
 .ui.secondary.inverted.menu .active.item {
-    background: var(--color-cream-green);
+    background: var(--color-main-green);
     color: #ffffff !important;
     border-radius: 25px;
 }
