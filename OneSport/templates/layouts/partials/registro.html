@@ -5,14 +5,20 @@
     <div class="logo-completo top-margin max">
       <h1>oneSport</h1><img src="{% static 'img/logo.png' %}" alt="">
     </div>
-    <form action="" method="post">
+    <form action="{% url 'account_signup' %}" method="post">
       {% csrf_token %}
       <div class="formulario-interno left">
-        <div class="field ui inverted transparent icon input input-line first">
-          <input type="text" name="login" placeholder="Usuario">
+        <div class="field ui inverted transparent icon input input-line">
+          <input type="text" name="username" placeholder="Nombre de usuario">
         </div>
         <div class="field ui inverted transparent icon input input-line">
-          <input type="password" name="password" placeholder="Usuario">
+          <input type="email" name="email" placeholder="Correo electronico">
+        </div>
+        <div class="field ui inverted transparent icon input input-line">
+          <input type="password" name="password1" placeholder="Contraseña">
+        </div>
+        <div class="field ui inverted transparent icon input input-line">
+          <input type="password" name="password2" placeholder="Confirmación de contraseña">
         </div>
       </div>
       <div class="contenedor-ui-checkbox">
@@ -21,9 +27,9 @@
           <label>Recordar siempre</label>
         </div>
         <div class="formulario-interno center top-margin">
-          <button class="ui green-e button top-margin bottom-margin">Ingresar</button><br>
-          <span class="top-margin bottom-margin">¿No tienes cuenta? Registrate <a href="#">aqui</a></span>
-          <a href="accounts/google/login/?process=login" rel="noopener" target="_blank" windowname="Login oneSport Google"><button type="button" class="ui green-e button top-margin max-margin-bottom ">Registrate con Google<i class="google icon"></i></button></a><br>
+          <button class="ui green-e button top-margin bottom-margin">Registrarse</button><br>
+          <span class="top-margin bottom-margin">Ya tienes cuenta? <a href="#" onclick="inicioSesion()">Inicia sesion</a></span>
+          <button class="ui green-e button top-margin max-margin-bottom ">Registrate con Google<i class="google icon"></i></button><br>
         </div>
       </form>
     </div>

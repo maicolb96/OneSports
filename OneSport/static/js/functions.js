@@ -20,16 +20,23 @@ inputOculto.addEventListener('change', function () {
     }
 });
 
+
+$(document).ready(function() {
+  $('#login-btn').click(function() {
+      $('#cuentas-contenido').load('login/');
+      $('.cuentas-modal').modal('show');
+  });
+});
 $(document).ready(function() {
     $('#registro-btn').click(function() {
         $('#cuentas-contenido').load('registro/');
         $('.cuentas-modal').modal('show');
     });
   });
-  $(document).ready(function() {
-    $('#login-btn').click(function() {
-        $('#cuentas-contenido').load('/cliente/login');
-        $('.cuentas-modal').modal('show');
-    });
-  });
-  
+
+  function inicioSesion(){
+    document.getElementById('login-btn').click()
+  }
+  function registroM(){
+    document.getElementById('registro-btn').click()
+  }

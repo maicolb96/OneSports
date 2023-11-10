@@ -60,4 +60,4 @@ def registro(request):
   return render(request,'layouts/partials/registro.html',{})
 
 def ingreso(request):
-    pass
+    return render(request,'layouts/partials/login.html',{})
