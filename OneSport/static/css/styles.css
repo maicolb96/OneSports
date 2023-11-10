@@ -3,7 +3,8 @@
     --color-gray-contrast: #9e9e9e;
     --color-gray-contrast-two: #3d3e3f;
     --color-gray-contrast-three: #272829;
-    --color-main-green: #96ae51;
+    /* --color-main-green: #96ae51; */ 
+    --color-main-orange: #ff8a00;
     --color-trans-green: #96ae5126;
     --color-greenish-grey-contrast:   #44453b;
     --color-greenish-grey-placeholder: #b9c1bc;
@@ -11,10 +12,10 @@
 
 /*COLORES*/
 .green_main_cl{
-    color: var(--color-main-green)!important;
+    color: var(--color-main-orange)!important;
 }
 .green_main_bg{
-    background: var(--color-main-green)!important;
+    background: var(--color-main-orange)!important;
     color: white!important;
 }
 .white_cl{
@@ -44,7 +45,7 @@ hr {
 #boton-disparador {
     font-size: 2em;
     margin: 14px;
-    color: var(--color-main-green);
+    color: var(--color-main-orange);
     width: auto;
     cursor: pointer;
 }
@@ -103,6 +104,20 @@ hr {
 .ui.menu {
   display: grid;
   grid-template-columns: 25% 50% 25%;
+}
+
+.ui.inverted.menu .active.item{
+  background-color: var(--color-main-orange)!important;
+}
+
+.ui.green-e.buttons .button,
+.ui.green-e.button {
+  background-color: var(--color-main-orange)!important;
+}
+
+.ui.green-e.buttons .button:hover,
+.ui.green-e.button:hover {
+  background-color: var(--color-trans-green)!important;
 }
 
 /*FIN STYLES REPLACED OF SEMANTIC*/
@@ -167,7 +182,7 @@ body{
 }
 
 .ui.secondary.inverted.menu .active.item {
-    background: var(--color-main-green);
+    background: var(--color-main-orange);
     color: #ffffff !important;
     border-radius: 25px;
 }
@@ -186,7 +201,7 @@ body{
     max-width: 400px !important;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--color-greenish-grey-contrast);
+    background-color: var(--color-gray-contrast-two);
     border-radius: 35px;
     padding-top: 5px;
   }
@@ -286,6 +301,7 @@ body{
  }
 
  .evento{
+  text-align: center;
   background: var(--color-gray-contrast-three);
   padding: 1em;
   max-width: 83%;
@@ -297,7 +313,7 @@ body{
  }
 
  .eventos h1{
-  color: var(--color-main-green);
+  color: var(--color-main-orange);
  }
 
  .eventos a{
@@ -307,7 +323,7 @@ body{
  }
 
  .eventos a:hover{
-  background: var(--color-main-green)!important;
+  background: var(--color-main-orange)!important;
  }
 
  .evento h2{
