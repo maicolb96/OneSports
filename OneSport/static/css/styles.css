@@ -284,3 +284,42 @@ body{
  .google.icon{
     margin-left: 10px!important;
  }
+
+ .evento{
+  background: var(--color-gray-contrast-three);
+  padding: 1em;
+  max-width: 83%;
+  border-radius: 10px;
+ }
+
+ .eventos{
+  margin-top: 10% !important;
+ }
+
+ .eventos h1{
+  color: var(--color-main-green);
+ }
+
+ .eventos a{
+  background: var(--color-gray-contrast-three)!important;
+  border-radius: 25px !important;
+  margin-bottom: 20px !important;
+ }
+
+ .eventos a:hover{
+  background: var(--color-main-green)!important;
+ }
+
+ .evento h2{
+    color: var(--color-gray-contrast);
+ }
+
+ .evento p{
+  color: white;
+}
+ 
+ .img_eventContainer img{
+    max-width: 250px;
+    border-radius: 10px;
+    width: 100%;
+ }

@@ -1,0 +1,17 @@
+{% load static %}
+<div class="eventos">
+    <h1>Eventos de interés</h1>
+    <a class="ui secondary button">
+        Nuevo evento
+    </a>
+    {%for event in events%}
+    <div class="evento">
+        <h2>{{event.title}}</h2>
+        <p>{{event.description}}</p>
+        <div class="img_eventContainer">
+            <img src="{{ event.image.url }}" alt="">
+        </div>      
+    </div>
+    {%endfor%}
+
+</div>

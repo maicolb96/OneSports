@@ -31,7 +31,9 @@ def home(request):
     context = {'posts':posts,
                'post_likes':post_likes,
                'comentarios':Comments.objects.all(),
-               'likes':Likes.objects.all(),}
+               'likes':Likes.objects.all(),
+               'events':Events.objects.all(),
+               }
     return render(request,'home.html',context)
 
 @login_required

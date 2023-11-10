@@ -41,3 +41,15 @@ class Comments(models.Model):
     class Meta:
         db_table = 'Comments'
     
+class Events(models.Model):
+    global objeto
+    object = 'event'
+    title = models.CharField(max_length=155,help_text='Titulo del evento')
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    description = models.TextField(null=False,blank=False,help_text='Cuerpo del evento')
+    fecha = models.CharField(max_length=25,help_text='Fecha del evento')
+    hora = models.CharField(max_length=25,help_text='Hora del evento')
+    image = models.ImageField(upload_to=nombreImagen,null=True,blank=True)
+
+    class Meta:
+        db_table = 'Events'
