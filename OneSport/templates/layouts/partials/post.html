@@ -1,3 +1,4 @@
+{%load static%}
 <div class="post">
     <form method="post" action="{% url 'newpost' %}" enctype="multipart/form-data">
         <div class="publish">    
@@ -20,11 +21,12 @@
     {% for post in posts%}
     <div class="ui card">
         <div class="content">
-          <div class="right floated meta">14h</div>
-          <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"> {{ post.user.username }}
+          <div class="right floated meta gray_contrast_cl">14h</div>
+          <img class="ui avatar image" src="{%static 'img/profile_default.jpg'%}"> 
+          <span class="username_card_post">{{ post.user.username }}</span>
         </div>
-        <div>
-            {{ post.descripcion }}
+        <div class="description_card_post">
+            <p>{{ post.descripcion }}</p>
         </div>
         {% if post.image %}
             <div class="image">
@@ -32,16 +34,16 @@
             </div>
         {% endif %}
         <div class="content">
-          <span class="right floated">
-            <i class="heart outline like icon"></i>
+          <span class="right floated white_cl cursor_hand">
+            <i class="heart outline like icon green_main_cl"></i>
             17 likes
           </span>
-          <i class="comment icon"></i>
-          3 comments
+          <i class="comment icon green_main_cl cursor_hand"></i>
+          <span class="white_cl cursor_hand">3 comments</span>
         </div>
         <div class="extra content">
           <div class="ui large transparent left icon input">
-            <i class="heart outline icon"></i>
+            <i class="heart outline icon green_main_cl"></i>
             <input type="text" placeholder="Add Comment...">
           </div>
         </div>

@@ -4,6 +4,7 @@
     --color-gray-contrast-two: #3d3e3f;
     --color-gray-contrast-three: #272829;
     --color-main-green: #96ae51;
+    --color-trans-green: #96ae5126;
     --color-greenish-grey-contrast:   #44453b;
     --color-greenish-grey-placeholder: #b9c1bc;
 }
@@ -16,9 +17,19 @@
     background: var(--color-main-green)!important;
     color: white!important;
 }
+.white_cl{
+  color: white !important;
+}
+.gray_contrast_cl{
+  color: var(--color-gray-contrast) !important;
+}
 /*FIN COLORES*/
 
 /*DECORADORES Y ELEMENTOS*/
+.cursor_hand{
+  cursor: pointer !important;
+}
+
 hr {
     height: 1px; /* Ajusta la altura deseada */
     border: none; /* Elimina el borde predeterminado */
@@ -31,7 +42,7 @@ hr {
 }
 
 #boton-disparador {
-    font-size: 2.5em;
+    font-size: 2em;
     margin: 14px;
     color: var(--color-main-green);
     width: auto;
@@ -47,6 +58,18 @@ hr {
     border-radius: 10px;
 }
 
+.username_card_post{
+  font-size: 1.3em;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  color: white;
+}
+
+.description_card_post{
+  padding: 1em;
+  color: white;
+}
 
 /*FIN DECORADORES Y ELEMENTOS*/
 
@@ -61,6 +84,25 @@ hr {
 
 .ui.inverted.menu .teal.active.item, .ui.inverted.teal.menu {
     background-color: var(--color-gray-contrast);
+}
+
+.avatar{
+  cursor: pointer;
+}
+
+.ui.cards > .card, .ui.card {
+  background: var(--color-gray-contrast-three)!important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+}
+
+.ui.cards > .card > .extra, .ui.card > .extra {
+  border-top: 1px solid #96ae5126 !important;
+}
+
+.ui.menu {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
 }
 
 /*FIN STYLES REPLACED OF SEMANTIC*/
@@ -80,14 +122,23 @@ body{
     border: 1px solid var(--color-gray-contrast) !important;
 }
 
+.header_search{
+  margin: auto !important;
+  width: 100% !important;
+  justify-content: center !important;
+  padding-right: 110px !important;
+  padding-left: 50px !important;
+}
+
 .aside{
     margin-top: 10% !important;
     padding-left: 15%;
 }
 
 .post{
-    margin-top: 5% !important;
-    padding-right: 30px;
+  margin-top: 5% !important;
+  padding-right: 110px;
+  padding-left: 50px;
 }
 
 .post_input{
@@ -103,6 +154,7 @@ body{
     background-color: var(--color-gray-contrast-three);
     padding: 20px;
     border-radius: 10px;
+    margin-bottom: 50px !important;
 }
 /*FIN SECCIONES*/
 
