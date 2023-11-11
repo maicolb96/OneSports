@@ -50,6 +50,7 @@ class Events(models.Model):
     fecha = models.CharField(max_length=25,help_text='Fecha del evento')
     hora = models.CharField(max_length=25,help_text='Hora del evento')
     image = models.ImageField(upload_to=nombreImagen,null=True,blank=True)
+    lugar = models.CharField(max_length=255,help_text='Lugar del evento')
 
     class Meta:
         db_table = 'Events'

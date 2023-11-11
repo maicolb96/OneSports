@@ -7,6 +7,7 @@
     {%for event in events%}
     <div class="evento">
         <h2>{{event.title}}</h2>
+        <span><i class="ui map marker alternate icon"></i> {{event.lugar}}</span>
         <p>{{event.description}}</p>
         <div class="img_eventContainer">
             <img src="{{ event.image.url }}" alt="">

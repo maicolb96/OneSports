@@ -3,6 +3,8 @@ var inputOculto = document.getElementById('inputOculto');
 var imgToPush = document.getElementById('img_to_pus');
 var div_img_to_push = document.getElementById('div_img_to_push');
 
+$('.ui.dropdown').dropdown();
+
 icon_img.addEventListener('click',function(){
     inputOculto.click();
 });  

@@ -4,20 +4,60 @@
     <div class="left item">
       <a href="{%url 'home'%}"><img id="logo" src="{% static 'img/logo2.png' %}"></a>
     </div>
-  <div class="item header_search">
-    <div class="ui inverted transparent icon input" style="border: 1px solid #757575; padding: 10px; border-radius: 25px; width:500px">
-      <input type="text" placeholder="Buscar...">
-      <i class="search icon" style="color: #96AE51; margin-right: 10px;"></i>
+    <div class="item header_search">
+      <div class="ui inverted transparent icon input"
+        style="cursor: pointer; border: 1px solid #757575; padding: 10px; border-radius: 25px; width:500px">
+        <input type="text" placeholder="Buscar...">
+        <i class="search icon" id="search_icon"></i>
+      </div>
     </div>
-  </div>
-  <div class="right item">
-    <a class="item" id="login-btn">
-      Inicia sesión
-    </a>
-    <a class="item active" id="registro-btn">
-      Registrarse
-    </a>
-  </div>
-    
+
+    {% if user.is_authenticated %}
+    <div class="right item">
+        <div class="ui inline dropdown">
+          <div class="text">
+            <img class="ui avatar image avatar_main" src="{%static 'img/profile_default.jpg'%}">
+          </div>
+          <br>
+          <div class="menu">
+            <div class="item">
+              <img class="ui avatar image avatar_main_display" src="{%static 'img/profile_default.jpg'%}">
+              <span class="white_cl">{{user.username}}</span>
+            </div>
+            <hr style="max-width: 97%;">
+            <div class="item">
+              <i class="ui user icon white_cl"></i>
+              <span class="white_cl">Amigos</span>
+            </div>
+            <div class="item">
+              <i class="ui users icon white_cl"></i>
+              <span class="white_cl">Grupos</span>
+            </div>
+            <div class="item">
+              <div class="ui label white_cl">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">51</font>
+                </font>
+              </div>
+              <span class="white_cl">Eventos</span>
+            </div>
+            <a href="{% url 'account_logout' %}" class="item">
+              <i class="sign-out icon white_cl"></i>
+              <span class="white_cl">Salir</span>
+            </a>
+          </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="right item">
+      <a class="item" id="login-btn">
+        Inicia sesión
+      </a>
+      <a class="item active" id="registro-btn">
+        Registrarse
+      </a>
+    </div>
+    {% endif %}
+
   </div>
 </div>

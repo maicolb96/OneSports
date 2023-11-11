@@ -1,4 +1,6 @@
 OneSport/config/.env
 OneSport/settings.py
-OneSport/settings.py
+OneSport/__pycache__/
+SportBlog/__pycache__/
+SportBlog/migrations/
 OneSport/__pycache__/settings.cpython-311.pyc
