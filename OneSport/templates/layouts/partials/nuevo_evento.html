@@ -1,0 +1,81 @@
+{% load static %}
+{% if 'http://localhost:8000/login/?next=' in request.build_absolute_uri %}
+{% include '../base.html' %}
+<div style="height: 100px;"></div>
+{% endif %}
+
+<div class="formulario evento">
+    <div class="ui card">
+        <div class="content">
+            <i class="right floated close icon event cursor_hand"></i>
+            <div class="header">Crear evento</div>
+        </div>
+        <div class="image">
+            <img id="imgToPus_event" class="cursor_hand" src="{%static 'img/upload_image_default.jpg'%}">
+            <button type="button" id="posicionado_sobre_imagen" class="ui button"></button>
+        </div>
+        <div class="organizer">
+            <img class="ui avatar image avatar_event_display" src="{%static 'img/profile_default.jpg'%}">
+            <div>
+                <span class="orange_main_cl">{{user.username}}</span>
+                <p class="gray_contrast_trans_cl">Organizador del evento</p>
+            </div>
+        </div>
+        <form class="ui form event_input" action="" method="post">
+            {% csrf_token %}
+            <div class="field big inverted input">
+                <input type="file" accept="image/*" id="inputOculto_event" name="imagen_event" style="display: none;">
+                <input type="text" name="event_name" placeholder="Nombre del evento" required>
+            </div>
+            <div class="field big inverted input">
+                <input type="text" name="event_place" placeholder="Lugar del evento" required>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <input type="date" name="event_date" placeholder="Fecha de inicio" required>
+                </div>
+                <div class="field">
+                    <input type="time" name="event_time" placeholder="Hora de inicio" required>
+                </div>
+            </div>
+            <div class="field big inverted input descripcion">
+                <textarea name="event_desc" id="" cols="30" rows="5" placeholder="Descripción del evento"
+                    required></textarea>
+            </div>
+            <div class="extra content">
+                <div class="publish__down">
+                    <button type="submit" class="fluid ui orange_main_bg orange_main_trans_bg_hv button">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Publicar</font>
+                        </font>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+
+    var posicionado_sobre_imagen = document.getElementById('posicionado_sobre_imagen');
+    var inputOculto_event = document.getElementById('inputOculto_event');
+    var imgToPus_event = document.getElementById('imgToPus_event');
+
+    var div_img_to_push = document.getElementById('div_img_to_push');
+
+    posicionado_sobre_imagen.addEventListener('click', function () {
+        inputOculto_event.click();
+    });
+
+    inputOculto_event.addEventListener('change', function () {
+        const file = inputOculto_event.files[0];
+        if (file) {
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                imgToPus_event.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+</script>

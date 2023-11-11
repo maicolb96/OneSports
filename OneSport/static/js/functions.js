@@ -1,9 +1,8 @@
 var icon_img = document.getElementById('boton-disparador');
 var inputOculto = document.getElementById('inputOculto');
 var imgToPush = document.getElementById('img_to_pus');
-var div_img_to_push = document.getElementById('div_img_to_push');
 
-$('.ui.dropdown').dropdown();
+var div_img_to_push = document.getElementById('div_img_to_push');
 
 icon_img.addEventListener('click',function(){
     inputOculto.click();
@@ -22,7 +21,14 @@ inputOculto.addEventListener('change', function () {
     }
 });
 
+$('.ui.dropdown').dropdown();
 
+$(document).ready(function() {
+  $('#new_event_btn').click(function() {
+      $('#cuentas-contenido').load('new_event/');
+      $('.cuentas-modal').modal('show');
+  });
+});
 $(document).ready(function() {
   $('#login-btn').click(function() {
       $('#cuentas-contenido').load('login/');

@@ -4,8 +4,8 @@
         <div class="publish">    
             {% csrf_token %}
             <div class="ui big inverted input post_input">
-                <input type="text" name="descripcion" placeholder="¿En que estas pensando?">
-                <i class='ui images icon' id="boton-disparador"></i>
+                <input type="text" name="descripcion" placeholder="¿En que estas pensando?" required>
+                <i class='ui images icon orange_main_trans_cl_hv' id="boton-disparador"></i>
             </div>
             <div id="div_img_to_push" class="show_img_to_push">
                 <img id="img_to_pus" src="" alt="Imagen a publicar">
@@ -13,7 +13,7 @@
             <hr style="max-width: 97%;">
             <div class="publish__down">
                 <input type="file" accept="image/*" name="image" style="display: none;" id="inputOculto">
-                <button class="fluid ui green_main_bg button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Publicar</font></font></button>
+                <button type="submit" class="fluid ui orange_main_bg orange_main_trans_bg_hv button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Publicar</font></font></button>
             </div>
         </div>
     </form>
@@ -35,15 +35,15 @@
         {% endif %}
         <div class="content">
           <span class="right floated white_cl cursor_hand">
-            <i class="heart outline like icon green_main_cl"></i>
+            <i class="heart outline like icon orange_main_cl"></i>
             17 likes
           </span>
-          <i class="comment icon green_main_cl cursor_hand"></i>
+          <i class="comment icon orange_main_cl cursor_hand"></i>
           <span class="white_cl cursor_hand">3 comments</span>
         </div>
         <div class="extra content">
           <div class="ui large transparent left icon input">
-            <i class="heart outline icon green_main_cl"></i>
+            <i class="heart outline icon orange_main_cl"></i>
             <input type="text" placeholder="Add Comment...">
           </div>
         </div>

@@ -6,6 +6,19 @@ from django.contrib.auth.decorators import login_required
 from allauth.socialaccount.providers.oauth2.views import OAuth2Adapter #Se agrego para saltar la confirmación de google
 # Create your views here.
 
+def save_event(request):
+    event = Events()
+    current_user = get_object_or_404(User, pk=request.user.pk)
+    event.title = request.POST.get('event_name')
+    event.user = current_user
+    event.description = request.POST.get('event_desc')
+    event.fecha = request.POST.get('event_date')
+    event.hora = request.POST.get('event_time')
+    event.image = request.POST.get('imagen_event')
+    event.lugar = request.POST.get('event_place')
+    event.save()
+    return redirect('home')
+    
 @login_required
 def new_post(request):
     form = PostForm(request.POST, request.FILES)
@@ -14,16 +27,19 @@ def new_post(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.user = current_user
-            print(form.cleaned_data)
             post.save()
-            #messages.success(request, 'Post enviado')
+
             return redirect('home')
     return render(request,'home.html',{'form':form})
 
 def home(request):
     posts = Post.objects.all()
+
     posts = posts[::-1]
     post_likes = {}
+    if request.method == 'POST':
+        print("HOLA")
+        save_event(request)
 
     for post in posts:
         post_like_count = Likes.objects.filter(post=post).count()
@@ -61,3 +77,7 @@ def registro(request):
 
 def ingreso(request):
     return render(request,'layouts/partials/login.html',{})
+
+@login_required
+def new_event(request):
+    return render(request,'layouts/partials/nuevo_evento.html',{})
