@@ -28,6 +28,7 @@ urlpatterns = [
     path('comentario/newcomentario/<int:id_post>/', views.newcomentario,name='comment_new'),
     path('like/<int:id_post>/', views.likeordislike,name='likeordislike'),
     path('registro/',views.registro, name='registro'),
+    #auth_views.PasswordResetView.as_view(template_name="recuperar.html"),name='password_reset')
     path('login/',views.ingreso, name='ingreso'),
     path('',views.home,name='home'),
 ] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

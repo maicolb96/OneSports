@@ -16,9 +16,9 @@ def new_post(request):
             post.user = current_user
             print(form.cleaned_data)
             post.save()
-            messages.success(request, 'Post enviado')
+            #messages.success(request, 'Post enviado')
             return redirect('home')
-    return render(request,'newpost.html',{'form':form})
+    return render(request,'home.html',{'form':form})
 
 def home(request):
     posts = Post.objects.all()

@@ -1,4 +1,10 @@
 {% load static %}
+
+{% if 'http://localhost:8000/login/?next=' in request.build_absolute_uri %}
+  {% include '../base.html' %}
+  <div style="height: 100px;"></div>
+{% endif %}
+
 <div class="formulario cuenta">
   <i class="close icon" style="float: right;"></i>
   <div class="formulario cuenta">
@@ -23,7 +29,11 @@
         <div class="formulario-interno center top-margin">
           <button class="ui green-e button top-margin bottom-margin">Ingresar</button><br>
           <span class="top-margin bottom-margin">¿No tienes cuenta? Registrate <a href="#" onclick="registroM()">aqui</a></span>
-          <a href="accounts/google/login/?process=login" rel="noopener" target="blank" windowname="Login oneSport Google"><button type="button" class="ui green-e button top-margin max-margin-bottom ">Registrate con Google<i class="google icon"></i></button></a><br>
+          {% if 'http://localhost:8000/login/?next=' in request.build_absolute_uri %}
+            <a href="../accounts/google/login/?process=login" rel="noopener" windowname="Login oneSport Google"><button type="button" class="ui green-e button top-margin max-margin-bottom ">Registrate con Google<i class="google icon"></i></button></a><br>
+          {% else %}  
+            <a href="accounts/google/login/?process=login" rel="noopener" windowname="Login oneSport Google"><button type="button" class="ui green-e button top-margin max-margin-bottom ">Registrate con Google<i class="google icon"></i></button></a><br>
+          {% endif %}
         </div>
       </form>
     </div>

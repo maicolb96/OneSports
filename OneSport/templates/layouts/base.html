@@ -11,11 +11,13 @@
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-    {% include "layouts/partials/menu.html" %}
-    {% block container %}
-      
-    {% endblock container %}
-    {% include "layouts/partials/modal.html" %}
+    {% if not 'http://localhost:8000/login/?next=' in request.build_absolute_uri %}
+        {% include "layouts/partials/menu.html" %}
+        {% block container %}
+
+        {% endblock container %}
+        {% include "layouts/partials/modal.html" %}
+    {% endif %}
 </body>
 <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 <script src="{% static 'js/semantic.js' %}"></script>
