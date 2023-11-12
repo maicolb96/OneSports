@@ -2,7 +2,7 @@ import os
 
 from pathlib import Path
 
-import environ
+from environ import Env
 
 from django.contrib.messages import constants as msj
 
@@ -21,9 +21,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 #Environ file
-env = environ.Env()
+env = Env()
 env_file = os.path.join(BASE_DIR, 'OneSport/config/.env')
-environ.Env.read_env(env_file)
+Env.read_env(env_file)
 
 # Application definition
 
@@ -101,12 +101,11 @@ WSGI_APPLICATION = 'OneSport.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': env('NAME'),
-        'HOST':env('HOST'),
+        'HOST': env('HOST'),
         'USER':env('USER'),
         'PASSWORD':env('PASSWORD'),
         'PORT':env('PORT'),
