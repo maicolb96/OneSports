@@ -21,25 +21,25 @@
                 <p class="gray_contrast_trans_cl">Organizador del evento</p>
             </div>
         </div>
-        <form class="ui form event_input" action="" method="post">
+        <form class="ui form event_input" action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="field big inverted input">
-                <input type="file" accept="image/*" id="inputOculto_event" name="imagen_event" style="display: none;">
-                <input type="text" name="event_name" placeholder="Nombre del evento" required>
+                <input type="file" accept="image/*" id="inputOculto_event" name="image" style="display: none;">
+                <input type="text" name="title" placeholder="Nombre del evento" required>
             </div>
             <div class="field big inverted input">
-                <input type="text" name="event_place" placeholder="Lugar del evento" required>
+                <input type="text" name="lugar" placeholder="Lugar del evento" required>
             </div>
             <div class="two fields">
                 <div class="field">
-                    <input type="date" name="event_date" placeholder="Fecha de inicio" required>
+                    <input type="date" name="fecha" placeholder="Fecha de inicio" required>
                 </div>
                 <div class="field">
-                    <input type="time" name="event_time" placeholder="Hora de inicio" required>
+                    <input type="time" name="hora" placeholder="Hora de inicio" required>
                 </div>
             </div>
             <div class="field big inverted input descripcion">
-                <textarea name="event_desc" id="" cols="30" rows="5" placeholder="Descripción del evento"
+                <textarea name="description" id="" cols="30" rows="5" placeholder="Descripción del evento"
                     required></textarea>
             </div>
             <div class="extra content">

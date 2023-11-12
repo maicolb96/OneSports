@@ -8,3 +8,9 @@ class PostForm(forms.ModelForm):
         fields = '__all__'
         exclude = ['user']
 
+
+class EventsForm(forms.ModelForm):
+    class Meta:
+        model = Events
+        fields = ['title', 'description', 'fecha', 'hora', 'image', 'lugar']
+        exclude = ['user']

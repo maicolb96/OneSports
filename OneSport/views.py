@@ -7,17 +7,15 @@ from allauth.socialaccount.providers.oauth2.views import OAuth2Adapter #Se agreg
 # Create your views here.
 
 def save_event(request):
-    event = Events()
     current_user = get_object_or_404(User, pk=request.user.pk)
-    event.title = request.POST.get('event_name')
-    event.user = current_user
-    event.description = request.POST.get('event_desc')
-    event.fecha = request.POST.get('event_date')
-    event.hora = request.POST.get('event_time')
-    event.image = request.POST.get('imagen_event')
-    event.lugar = request.POST.get('event_place')
-    event.save()
-    return redirect('home')
+    form = EventsForm(request.POST, request.FILES)
+    if form.is_valid():
+        event = form.save(commit=False)
+        event.user = current_user
+        event.save()
+        return redirect('home')
+    
+    
     
 @login_required
 def new_post(request):
@@ -38,7 +36,6 @@ def home(request):
     posts = posts[::-1]
     post_likes = {}
     if request.method == 'POST':
-        print("HOLA")
         save_event(request)
 
     for post in posts:
