@@ -32,8 +32,10 @@ def new_post(request):
 
 def home(request):
     posts = Post.objects.all()
-
+    events = Events.objects.all()
     posts = posts[::-1]
+    events = events[::-1]
+    
     post_likes = {}
     if request.method == 'POST':
         save_event(request)
@@ -41,11 +43,12 @@ def home(request):
     for post in posts:
         post_like_count = Likes.objects.filter(post=post).count()
         post_likes[post.id] = post_like_count
+
     context = {'posts':posts,
                'post_likes':post_likes,
                'comentarios':Comments.objects.all(),
                'likes':Likes.objects.all(),
-               'events':Events.objects.all(),
+               'events':events,
                }
     return render(request,'home.html',context)
 
