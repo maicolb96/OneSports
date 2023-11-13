@@ -34,6 +34,7 @@ ejecutando el comando: pip install -r requirements.txt
 1. Instalar los requerimientos: pip install -r requirements.txt
 2. Crear la base de datos con el nombre "onesport"
 3. Configurar las variables de entorno creando el archivo .env en OneSport/config/
+   NOTA: Puede ejecutar el archivo de config.py ubicado en OneSport/config/ para hacer el proceso automático.
 
     ## CONFIGURACIÓN DE LA DATABASE
     NAME="nombre de la db"

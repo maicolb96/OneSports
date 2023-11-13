@@ -85,6 +85,10 @@ hr {
   color: white;
 }
 
+.post_img{
+  max-height: 350px !important;
+}
+
 .description_card_post{
   padding: 1em;
   color: white;
