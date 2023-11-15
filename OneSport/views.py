@@ -77,3 +77,21 @@ def new_event(request):
             event.save()
             return redirect('home')
     return render(request,'layouts/partials/nuevo_evento.html',{})
+
+def search_field_top(request,search_field):
+    events= Events.objects.filter(description__incontains=search_field)[:3]
+    post= Post.objects.filter(descripcion__incontains=search_field)[:3]
+    users= User.objects.filter(username__incontains=search_field)[:3]
+    groups= None
+    context = {
+        'eventos':events,
+        'posts':post,
+        'users':users,
+        'groups':groups,
+    }
+    
+    return render(request,'search.html',context)
+
+def search_field_event():pass
+def search_field_post():pass
+def search_field_user():pass
