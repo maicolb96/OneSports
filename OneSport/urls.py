@@ -29,6 +29,8 @@ urlpatterns = [
     path('like/<int:id_post>/', views.likeordislike,name='likeordislike'),
     path('registro/',views.registro, name='registro'),
     path('new_event/',views.new_event, name='new_event'),
+    path('editar_evento/<int:event_id>',views.edit_event, name='editar_evento'),
+    path('borrar_evento/<int:event_id>',views.delete_event, name='borrar_evento'),
     path('login/',views.ingreso, name='ingreso'),
     path('',views.home,name='home'),
 ] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -43,6 +43,13 @@ $(document).ready(function() {
     });
   });
 
+
+  function modalEditEvent(id) {
+    $('#cuentas-contenido').load('editar_evento/' + id);
+    $('.cuentas-modal').modal('show');
+  }
+
+
   function inicioSesion(){
     document.getElementById('login-btn').click()
   }
@@ -58,3 +65,4 @@ $(document).ready(function() {
         inicioSesion();
     }
 });
+

@@ -54,6 +54,29 @@ def home(request):
     return render(request,'home.html',context)
 
 @login_required
+def edit_event(request,event_id):
+    event = get_object_or_404(Events, pk=event_id)
+    if request.method == 'POST':
+        form = EventsForm(request.POST, request.FILES, instance=event)
+        form.save()
+        return redirect('home')
+    else:
+        event = get_object_or_404(Events, pk=event_id)
+        form = EventsForm(request.POST, request.FILES, instance=event)
+        return render (request, 'layouts/partials/editar_eventos.html', {
+            'event': event,
+            'form': form
+        })
+
+@login_required
+def delete_event(request,event_id):
+    event = get_object_or_404(Events, pk=event_id)
+    event.delete()
+    return redirect('home')
+
+
+
+@login_required
 def likeordislike(request,id_post):
     post_like = Likes()
     post_like.post = Post.objects.get(id=id_post)
