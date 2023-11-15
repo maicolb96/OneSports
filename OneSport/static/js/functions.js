@@ -73,7 +73,6 @@ function busqueda_top(){
     window.location.href = url;
   }
 }
-
 document.getElementById('input_busqueda_top').addEventListener('keydown', function(event) {
   if (event.keyCode === 13) {
       busqueda_top();
