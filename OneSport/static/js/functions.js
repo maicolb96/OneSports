@@ -66,3 +66,16 @@ $(document).ready(function() {
         inicioSesion();
     }
 });
+function busqueda_top(){
+  if (document.getElementById('input_busqueda_top').value != ''){
+    var busqueda = document.getElementById('input_busqueda_top').value
+    let url = '/search/top/' + busqueda;
+    window.location.href = url;
+  }
+}
+document.getElementById('input_busqueda_top').addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+      busqueda_top();
+  }
+});
+document.getElementById('search_icon').addEventListener('click',busqueda_top())
