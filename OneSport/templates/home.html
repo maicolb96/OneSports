@@ -7,4 +7,5 @@
     {% include "layouts/partials/post.html" %}
     {% include "layouts/partials/eventos.html" %}
 </section>
+<script>var usuarioAutenticado = {{ user.is_authenticated|yesno:"true,false" }};</script>
 {% endblock container %}

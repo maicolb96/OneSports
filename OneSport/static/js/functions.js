@@ -50,4 +50,12 @@ $(document).ready(function() {
     document.getElementById('registro-btn').click()
   }
 
-
+  document.getElementById('formPost').addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (usuarioAutenticado) {
+        console.log('tuki tuki ñeñe')
+        this.submit();
+    } else {
+        inicioSesion();
+    }
+});
