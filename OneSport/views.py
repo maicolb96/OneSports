@@ -6,18 +6,7 @@ from django.contrib.auth.decorators import login_required
 from allauth.socialaccount.providers.oauth2.views import OAuth2Adapter #Se agrego para saltar la confirmación de google
 # Create your views here.
 
-def save_event(request):
-    current_user = get_object_or_404(User, pk=request.user.pk)
-    form = EventsForm(request.POST, request.FILES)
-    if form.is_valid():
-        event = form.save(commit=False)
-        event.user = current_user
-        event.save()
-        print('SAVED')
-        return redirect('home')
-    
-    
-    
+     
 @login_required
 def new_post(request):
     form = PostForm(request.POST, request.FILES)
@@ -32,14 +21,11 @@ def new_post(request):
     return render(request,'home.html',{'form':form})
 
 def home(request):
-    posts = Post.objects.all()
-    events = Events.objects.all()
-    posts = posts[::-1]
-    events = events[::-1]
-    
+    posts = Post.objects.all()[::-1]
+    events = Events.objects.all()[::-1]
+    comments = Comments.objects.all()
+    likes = Likes.objects.all()
     post_likes = {}
-    if request.method == 'POST':
-        save_event(request)
 
     for post in posts:
         post_like_count = Likes.objects.filter(post=post).count()
@@ -47,10 +33,11 @@ def home(request):
 
     context = {'posts':posts,
                'post_likes':post_likes,
-               'comentarios':Comments.objects.all(),
-               'likes':Likes.objects.all(),
+               'comentarios':comments,
+               'likes':likes,
                'events':events,
                }
+    
     return render(request,'home.html',context)
 
 @login_required
@@ -81,4 +68,12 @@ def ingreso(request):
 
 @login_required
 def new_event(request):
+    if request.method == 'POST':
+        current_user = get_object_or_404(User, pk=request.user.pk)
+        form = EventsForm(request.POST, request.FILES)
+        if form.is_valid():
+            event = form.save(commit=False)
+            event.user = current_user
+            event.save()
+            return redirect('home')
     return render(request,'layouts/partials/nuevo_evento.html',{})

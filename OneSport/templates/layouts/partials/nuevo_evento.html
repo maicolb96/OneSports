@@ -21,7 +21,7 @@
                 <p class="gray_contrast_trans_cl">Organizador del evento</p>
             </div>
         </div>
-        <form class="ui form event_input" action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+        <form class="ui form event_input" action="{% url 'new_event' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="field big inverted input">
                 <input type="file" accept="image/*" id="inputOculto_event" name="image" style="display: none;">
