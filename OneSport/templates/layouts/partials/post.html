@@ -1,6 +1,6 @@
 {%load static%}
 <div class="post">
-    <form method="post" action="{% url 'newpost' %}" enctype="multipart/form-data">
+    <form method="post" action="{% url 'newpost' %}" enctype="multipart/form-data" id="formPost">
         <div class="publish">    
             {% csrf_token %}
             <div class="ui big inverted input post_input">
@@ -13,7 +13,7 @@
             <hr style="max-width: 97%;">
             <div class="publish__down">
                 <input type="file" accept="image/*" name="image" style="display: none;" id="inputOculto">
-                <button type="submit" class="fluid ui orange_main_bg orange_main_trans_bg_hv button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Publicar</font></font></button>
+                <button type="submit" class="fluid ui orange_main_bg orange_main_trans_bg_hv button" id="postSubmit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Publicar</font></font></button>
             </div>
         </div>
     </form>

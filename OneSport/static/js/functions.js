@@ -8,6 +8,7 @@ icon_img.addEventListener('click',function(){
     inputOculto.click();
 });  
 
+
 inputOculto.addEventListener('change', function () {
     const file = inputOculto.files[0];
     if (file) {
@@ -48,3 +49,12 @@ $(document).ready(function() {
   function registroM(){
     document.getElementById('registro-btn').click()
   }
+
+  document.getElementById('formPost').addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (usuarioAutenticado) {
+        this.submit();
+    } else {
+        inicioSesion();
+    }
+});

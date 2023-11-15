@@ -13,6 +13,7 @@ def save_event(request):
         event = form.save(commit=False)
         event.user = current_user
         event.save()
+        print('SAVED')
         return redirect('home')
     
     

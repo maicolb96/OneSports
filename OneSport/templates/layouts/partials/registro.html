@@ -5,7 +5,7 @@
     <div class="logo-completo top-margin max">
       <h1>oneSport</h1><img src="{% static 'img/logo.png' %}" alt="">
     </div>
-    <form action="{% url 'account_signup' %}" method="post">
+    <form action="{% url 'home' %}" method="post">
       {% csrf_token %}
       <div class="formulario-interno left">
         <div class="field ui inverted transparent icon input input-line">
