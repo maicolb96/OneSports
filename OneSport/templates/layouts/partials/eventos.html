@@ -9,13 +9,16 @@
     {%for event in events%}
     {% if event.user_id == user.id %}
     <div class="evento">
-        <div class="ui icon top left pointing dropdown button">
-            <i class="ellipsis horizontal icon"></i>
-            <div class="menu">
-              <div class="item" onclick="modalEditEvent( {{event.id}} )">Editar evento</div>
-              <div class="item default"><a href="{% url 'borrar_evento' event.id %}">Eliminar evento</a></div>
+
+        <div class="main_event">
+            <div class="ui icon top left dropdown button">
+                <i class="ellipsis horizontal icon"></i>
+                <div class="menu">
+                  <div class="item" onclick="modalEditEvent( {{event.id}} )"><a>Editar evento</a></div>
+                  <div class="item default"><a href="{% url 'borrar_evento' event.id %}">Eliminar evento</a></div>
+                </div>
             </div>
-          </div>
+        </div> 
         <h2 class="cursor_hand"><i class="hand point right icon"></i>{{event.title}}</h2>
         <span class="cursor_hand"><i class="ui map marker alternate icon"></i>{{event.lugar}}</span>
         <p class="cursor_hand">{{event.description}}</p>

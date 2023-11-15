@@ -255,6 +255,26 @@ body{
     color: rgba(255, 255, 255, 0.9);
 }
 
+.ui.dropdown .menu {
+  left: -40px;
+}
+
+
+element.style {
+  text-align: left;
+  margin: auto;
+}
+.ui.dropdown .menu > .item:first-child {
+  border-top-width: 0px;
+}
+.ui.dropdown .menu > .item {
+  width: 100%;
+}
+
+.ui.dropdown .menu > .item:hover{
+  background: var(--color-gray-contrast-three)!important;
+}
+
 /********************************************/
 /*        Estilos Nuevo Evento          */
 /********************************************/
@@ -482,6 +502,38 @@ input[type="time"]::-ms-clear {
  }
  .google.icon{
     margin-left: 10px!important;
+ }
+
+ .main_event{
+    width: 100%;
+ }
+
+ .main_event div{
+    float: right;
+    background: transparent !important;
+ }
+
+ .main_event div i{
+    color: white;
+    font-size: 1em;
+    width: auto;
+    float: right;
+ }
+
+ .main_event div div{
+  background: var(--color-gray-contrast-two) !important;
+  color: white;
+  text-align: center;
+ }
+
+ .main_event div div a{
+  background: transparent !important;
+  color: white;
+ }
+
+ .main_event div div a:hover{
+  background: transparent !important;
+  /*color: var(--color-main-orange);*/
  }
 
  .evento{

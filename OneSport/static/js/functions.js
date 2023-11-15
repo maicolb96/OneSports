@@ -66,7 +66,3 @@ $(document).ready(function() {
         inicioSesion();
     }
 });
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
