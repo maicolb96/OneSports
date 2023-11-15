@@ -22,7 +22,7 @@
         <span class="cursor_hand"><i class="ui map marker alternate icon"></i>{{event.lugar}}</span>
         <p class="cursor_hand">{{event.description}}</p>
         <div class="img_eventContainer cursor_hand">
-            <img class="post_img" src="{% if event.image %}{{ event.image.url }}{% endif %}" alt="">
+            <img class="post_img" onclick="modalEditEvent( {{event.id}} )" src="{% if event.image %}{{ event.image.url }}{% endif %}" alt="">
         </div>      
     </div>
     {% endif %}
