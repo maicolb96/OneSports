@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %} {{search_field}} {% endblock title %}
+{% block container %}
+<h1> {{search_field}} </h1>
+<h2>Eventos</h2>
+{% for evento in eventos %}
+  <h3> {{evento.description}} </h3>
+{% endfor %}
+<h2>Post</h2>
+{% for post in posts %}
+  <h3> {{ post.descripcion }} </h3>
+{% endfor %}
+<h2>Usuarios</h2>
+{% for user in users %}
+  <h3> {{ user.username }} </h3>
+{% endfor %}
+{% endblock container %}
+{% block scripts %}
+  <script>
+    function busqueda_top(){
+      if (document.getElementById('input_busqueda_top').value != ''){
+        var busqueda = document.getElementById('input_busqueda_top').value
+        let url = '/search/top/' + busqueda;
+        window.location.href = url;
+      }
+    }
+
+    document.getElementById('input_busqueda_top').addEventListener('keydown', function(event) {
+      if (event.keyCode === 13) {
+          busqueda_top();
+      }
+    });
+    document.getElementById('search_icon').addEventListener('click',busqueda_top())
+  </script>
+{% endblock scripts %}

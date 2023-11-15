@@ -37,7 +37,7 @@ def home(request):
                'likes':likes,
                'events':events,
                }
-    
+    pass
     return render(request,'home.html',context)
 
 @login_required
@@ -102,19 +102,31 @@ def new_event(request):
     return render(request,'layouts/partials/nuevo_evento.html',{})
 
 def search_field_top(request,search_field):
-    events= Events.objects.filter(description__incontains=search_field)[:3]
-    post= Post.objects.filter(descripcion__incontains=search_field)[:3]
-    users= User.objects.filter(username__incontains=search_field)[:3]
+    events= Events.objects.filter(description__icontains=search_field)[:3]
+    post= Post.objects.filter(descripcion__icontains=search_field)[:3]
+    users= User.objects.filter(username__icontains=search_field)[:3]
     groups= None
     context = {
         'eventos':events,
         'posts':post,
         'users':users,
         'groups':groups,
+        'search_field':search_field
     }
-    
     return render(request,'search.html',context)
 
-def search_field_event():pass
-def search_field_post():pass
-def search_field_user():pass
+def search_field_event(request,search_field):
+    events= Events.objects.filter(description__icontains=search_field).all()
+    context = {
+        'eventos':events,
+        'search_field':search_field
+    }
+    pass
+def search_field_post(request,search_field):
+    post= Post.objects.filter(descripcion__icontains=search_field).all()
+    context = {
+        'posts':post,
+        'search_field':search_field
+    }
+def search_field_user(request,search_field):pass
+def search_field_group(request,search_field):pass
