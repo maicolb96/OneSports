@@ -33,4 +33,9 @@ urlpatterns = [
     path('borrar_evento/<int:event_id>',views.delete_event, name='borrar_evento'),
     path('login/',views.ingreso, name='ingreso'),
     path('',views.home,name='home'),
+    path('search/top/<str:search_field>',views.search_field_top, name='search_field'),
+    path('search/event/<str:search_field>',views.search_field_event, name='search_field'),
+    path('search/post/<str:search_field>',views.search_field_post, name='search_field'),
+    path('search/user/<str:search_field>',views.search_field_user, name='search_field'),
+    path('search/group/<str:search_field>',views.search_field_group, name='search_field'),
 ] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
