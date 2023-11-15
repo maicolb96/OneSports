@@ -126,7 +126,7 @@ def search_field_post(request,search_field):
     post= Post.objects.filter(descripcion__icontains=search_field).all()
     context = {
         'posts':post,
-        'search_field':search_field
+        'search_field':search_field,
     }
 def search_field_user(request,search_field):pass
 def search_field_group(request,search_field):pass
