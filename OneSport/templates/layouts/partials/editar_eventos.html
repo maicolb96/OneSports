@@ -11,7 +11,7 @@
             <div class="header">Editar evento</div>
         </div>
         <div class="image">
-            <img id="imgToPus_event" class="cursor_hand post_img" src="{{event.image.url}}">
+            <img id="imgToPus_event" class="cursor_hand post_img" src="{% if event.image %}{{ event.image.url }}{% else %}{%static 'img/upload_image_default.jpg'%}{% endif %}">
             <button type="button" id="posicionado_sobre_imagen" class="ui button"></button>
         </div>
         <div class="organizer">
