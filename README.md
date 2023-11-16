@@ -1,14 +1,12 @@
-# OneSport: https://github.com/maicolb96/hackaton-expo-ingenieria
+# OneSport
 
-## Descripción
 Este proyecto es un blog deportivo, con funciones respectivas de una
 red social, permite crear cuentas, registrarte con google, realizar post,
 seguir a otras personas, interactuar con los post, crear y participar
 en eventos, pertenecer y crear grupos.
 
-## Requisitos
-NOTA: Los requisitos se pueden instalar 
-ejecutando el comando: pip install -r requirements.txt
+# Requisitos
+## NOTA: Los requisitos se pueden instalar ejecutando el comando: pip install -r requirements.txt
 
 - Python=3.9.13 ó Superior
 - Django==4.2.2
@@ -29,7 +27,9 @@ ejecutando el comando: pip install -r requirements.txt
 - mysqlclient==2.2.0
 - Pillow==9.4.0
 
-## Instalación
+# Instalación
+
+## NOTA: Puede ejecutar el archivo de config.exe ubicado en OneSport/config/ para hacer el proceso guiado y automatizado, disponible solo en SO Windows, si no, continúe con los siguientes pasos:
 
 1. Instalar los requerimientos: pip install -r requirements.txt
 2. Crear la base de datos con el nombre "onesport"
@@ -62,7 +62,7 @@ ejecutando el comando: pip install -r requirements.txt
 
 7. Correr el servidor: python manage.py runserver
 
-## Desarrolladores:
+# Desarrolladores:
 
 1. Michael Esteban Blandón Agudelo
    GitHub: https://github.com/maicolb96
@@ -70,5 +70,7 @@ ejecutando el comando: pip install -r requirements.txt
    GitHub: https://github.com/Anfifix07
 3. Carlos Andrés Meneses
    GitHub: https://github.com/pepitouchiha
+
+# Repositorio: https://github.com/maicolb96/hackaton-expo-ingenieria
 
 
