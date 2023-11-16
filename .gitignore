@@ -1,4 +1,5 @@
 *.env
+*config.py
 !OneSport/config/
 OneSport/settings.py
 OneSport/__pycache__/
