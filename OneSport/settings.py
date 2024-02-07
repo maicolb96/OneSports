@@ -163,7 +163,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Logout and login redirects
 LOGIN_URL = '../login/'
-SOCIALACCOUNT_LOGIN_ON_GET=True #Evita la ventana de confirmación, loguea directamente con google
+SOCIALACCOUNT_LOGIN_ON_GET=False #Evita la ventana de confirmación, loguea directamente con google
 LOGIN_REDIRECT_URL = "home"
 REGISTER_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"

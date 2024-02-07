@@ -4,6 +4,7 @@ from SportBlog.models import *
 from SportBlog.forms import *
 from django.contrib.auth.decorators import login_required
 from allauth.socialaccount.providers.oauth2.views import OAuth2Adapter #Se agrego para saltar la confirmación de google
+from allauth.socialaccount.models import SocialAccount
 # Create your views here.
 
      
@@ -21,6 +22,9 @@ def new_post(request):
     return render(request,'home.html',{'form':form})
 
 def home(request):
+    data = SocialAccount.objects.get(id=1).extra_data
+    picture = data.get('picture')
+
     posts = Post.objects.all()[::-1]
     events = Events.objects.all()[::-1]
     comments = Comments.objects.all()
@@ -36,6 +40,7 @@ def home(request):
                'comentarios':comments,
                'likes':likes,
                'events':events,
+               'picture': picture,
                }
     pass
     return render(request,'home.html',context)
