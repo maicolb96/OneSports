@@ -24,6 +24,7 @@ def new_post(request):
 def home(request):
     data = SocialAccount.objects.get(id=1).extra_data
     picture = data.get('picture')
+    name = data.get('name')
 
     posts = Post.objects.all()[::-1]
     events = Events.objects.all()[::-1]
@@ -41,6 +42,7 @@ def home(request):
                'likes':likes,
                'events':events,
                'picture': picture,
+               'name':name,
                }
     pass
     return render(request,'home.html',context)
